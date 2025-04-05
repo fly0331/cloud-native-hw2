@@ -1,0 +1,37 @@
+name: Bug Report
+description: 用於報告軟體中的錯誤或問題。
+labels: ['bug']
+
+fields:
+  - type: textarea
+    label: 描述錯誤
+    description: 請簡要描述發現的錯誤
+    required: true
+
+  - type: textarea
+    label: 重現步驟
+    description: 請列出如何重現這個錯誤的步驟
+    required: true
+
+  - type: input
+    label: 預期結果
+    description: 請描述你預期的結果
+    required: true
+
+  - type: input
+    label: 實際結果
+    description: 請描述實際的錯誤或行為
+    required: true
+
+  - type: dropdown
+    label: 操作系統
+    options:
+      - Windows
+      - macOS
+      - Linux
+    required: true
+
+  - type: input
+    label: 錯誤訊息（如有）
+    description: 如有錯誤訊息，請提供詳細內容
+    required: false
