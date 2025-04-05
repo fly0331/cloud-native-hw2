@@ -1,6 +1,6 @@
 # cloud-native-hw2
 
-這是一個用於練習 GitHub Pull Request 和 GitHub Actions 的專案。
+這是一個用於練習 GitHub Pull Request 和 GitHub Actions 的作業專案。
 
 ## 練習目的
 
