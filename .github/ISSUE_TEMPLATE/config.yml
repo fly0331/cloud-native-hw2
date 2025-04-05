@@ -1,9 +1,8 @@
-blank:
-  - name: "Bug Report"
-    description: "用於報告錯誤或問題"
-    labels: ["bug"]
-    template: "bug_report.yml"
-  - name: "Feature Request"
-    description: "用於提交功能請求"
-    labels: ["enhancement"]
-    template: "feature_request.yml"
+blank_issues_enabled: false
+contact_links:
+  - name: GitHub Community Support
+    url: https://github.com/orgs/community/discussions
+    about: Please ask and answer questions here.
+  - name: GitHub Security Bug Bounty
+    url: https://bounty.github.com/
+    about: Please report security vulnerabilities here.
