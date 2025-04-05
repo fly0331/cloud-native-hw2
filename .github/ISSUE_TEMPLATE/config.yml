@@ -1,0 +1,9 @@
+blank:
+  - name: "Bug Report"
+    description: "用於報告錯誤或問題"
+    labels: ["bug"]
+    template: "bug_report.yml"
+  - name: "Feature Request"
+    description: "用於提交功能請求"
+    labels: ["enhancement"]
+    template: "feature_request.yml"
