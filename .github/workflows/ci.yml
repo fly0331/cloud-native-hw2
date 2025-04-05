@@ -1,0 +1,38 @@
+name: CI for Text Files
+
+on:
+  push:
+    branches:
+      - hw-p  # 當推送到 hw-p 分支時觸發
+      - hw-f  # 當推送到 hw-f 分支時觸發
+  pull_request:
+    branches:
+      - main  # 當向 main 分支創建 PR 時觸發
+
+jobs:
+  check-text-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # 檢出代碼
+
+      - name: Check if README.md exists
+        run: |
+          if [ ! -f "README.md" ]; then
+            echo "README.md not found!"
+            exit 1  # 如果找不到 README.md，則失敗
+          fi
+
+      - name: Check if README.md contains 'GitHub Actions'
+        run: |
+          if ! grep -q "GitHub Actions" "README.md"; then
+            echo "README.md does not contain 'GitHub Actions'"
+            exit 1  # 如果 README.md 中沒有指定的內容，則失敗
+          fi
+
+      - name: Ensure no TODO comments are left
+        run: |
+          if grep -q "TODO" "README.md"; then
+            echo "Found TODO comments in README.md"
+            exit 1  # 如果 README.md 中仍有 TODO 註解，則失敗
+          fi
