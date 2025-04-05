@@ -1,37 +1,64 @@
 name: Bug Report
-description: 用於報告軟體中的錯誤或問題。
-labels: ['bug']
-
-fields:
-  - type: textarea
-    label: 描述錯誤
-    description: 請簡要描述發現的錯誤
-    required: true
-
-  - type: textarea
-    label: 重現步驟
-    description: 請列出如何重現這個錯誤的步驟
-    required: true
-
+description: File a bug report.
+title: "[Bug]: "
+labels: ["bug", "triage"]
+projects: ["octo-org/1", "octo-org/44"]
+assignees:
+  - octocat
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
   - type: input
-    label: 預期結果
-    description: 請描述你預期的結果
-    required: true
-
-  - type: input
-    label: 實際結果
-    description: 請描述實際的錯誤或行為
-    required: true
-
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Also tell us, what did you expect to happen?
+      placeholder: Tell us what you see!
+      value: "A bug happened!"
+    validations:
+      required: true
   - type: dropdown
-    label: 操作系統
-    options:
-      - Windows
-      - macOS
-      - Linux
-    required: true
-
-  - type: input
-    label: 錯誤訊息（如有）
-    description: 如有錯誤訊息，請提供詳細內容
-    required: false
+    id: version
+    attributes:
+      label: Version
+      description: What version of our software are you running?
+      options:
+        - 1.0.2 (Default)
+        - 1.0.3 (Edge)
+      default: 0
+    validations:
+      required: true
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: What browsers are you seeing the problem on?
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com). 
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
